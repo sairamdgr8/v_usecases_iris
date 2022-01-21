@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> ML FLASK IRIS DATA PREDICTION </title>
+</head>
+	<center>
+		<h1><p style="color:white;">IRIS DATA PREDICTION FLASK</p></h1>
+
+<div class="container">
+	<form method="POST", action="{{url_for('predict')}}">
+		<b><p style="color:white;"> Sepal Length :  <input type="text", name='sepal_length', placeholder="enter value of sepal length"> </p><br>
+		 <p style="color:white;">Sepal Width :  <input type="text", name='sepal_width', placeholder="enter value of sepal width"> </p><br>
+		 <p style="color:white;">Petal Length :  <input type="text", name='petal_length', placeholder="enter value of petal length"> </p><br>
+		 <p style="color:white;">Petal Width : <input type="text", name='petal_width', placeholder="enter value of petal width"> </p><br></b>
+		 <input type="submit" , value='predict!' >
+	 </form>
+
+</center>
+<div class="container">
+	<center>
+		<!-- {{ prediction_text }} -->
+		{% if prediction_text == 0 %}
+		<h2> <p style="color:white;"> Iris Setosa</h2>
+		<img src='static\setosa.jpg'> 
+		
+		{% elif prediction_text == 1 %}
+		<h2><p style="color:white;">Iris Versi</h2>
+		<img src='static\verci.jpg'>
+		
+		{% elif prediction_text == 2 %}
+		<h2><p style="color:white;">Iris Virginica</h2>
+		<img src='static\virginica.jpg'>
+		
+		{% endif %}
+	</center>
+	
+</div>
+</div>
+<style>
+	body {
+		background-image: url('static\\iris.jpg');
+		text-align: center;
+		padding: 0px;
+	}
+	
+</style>
+</body>
+</html>
